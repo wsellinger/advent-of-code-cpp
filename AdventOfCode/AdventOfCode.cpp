@@ -8,7 +8,7 @@
 
 int main()
 {
-    long result = AdventOfCodeLibrary::Year2015::Day01::PuzzleA(Input::Year2015::PuzzleA);
+    long result = AdventOfCodeLibrary::Year2015::Day01::PartA(Input::Year2015::PuzzleA);
     std::string output = std::to_string(result);
     std::cout << output + "\n";
 }

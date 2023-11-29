@@ -7,7 +7,7 @@ namespace AdventOfCodeLibrary
     {
         namespace Day01
         {
-            long PuzzleA(const std::string& input);
+            long PartA(const std::string& input);
         }
     }
 }

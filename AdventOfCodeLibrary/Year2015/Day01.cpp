@@ -42,7 +42,7 @@ namespace AdventOfCodeLibrary
         {
             long UpdateFloor(char input, long result);
 
-            long Day01::PuzzleA(const std::string& input)
+            long Day01::PartA(const std::string& input)
             {
                 long floor = 0;
 

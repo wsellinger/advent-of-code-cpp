@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Day_01_Tests.cpp">
-      <Filter>Year_2015_Tests</Filter>
+    <ClCompile Include="Day_01.cpp">
+      <Filter>Year_2015</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Year_2015_Tests">
+    <Filter Include="Year_2015">
       <UniqueIdentifier>{e4a70436-c0de-4f37-977a-67b465c2d448}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

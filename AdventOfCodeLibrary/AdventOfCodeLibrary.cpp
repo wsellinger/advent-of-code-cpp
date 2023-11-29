@@ -10,9 +10,9 @@ namespace AdventOfCodeLibrary
     {
         namespace Day01
         {
-            long PuzzleA(const std::string& input)
+            long PartA(const std::string& input)
             {
-                return Implementation::Year2015::Day01::PuzzleA(input);
+                return Implementation::Year2015::Day01::PartA(input);
             }
         }
     }
