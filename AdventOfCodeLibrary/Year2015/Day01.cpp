@@ -55,6 +55,22 @@ namespace AdventOfCodeLibrary
                 return floor;
             }
 
+            long Day01::PartB(const std::string& input)
+            {
+                long floor = 0;
+
+                for (int i = 0; i < input.length(); i++)
+                {
+                    char item = input[i];
+                    floor = UpdateFloor(item, floor);
+
+                    if (floor < 0)
+                        return i + 1;
+                }
+
+                return -1;
+            }
+
             long UpdateFloor(char input, long result)
             {
                 if (input == '(')

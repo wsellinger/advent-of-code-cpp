@@ -14,6 +14,11 @@ namespace AdventOfCodeLibrary
             {
                 return Implementation::Year2015::Day01::PartA(input);
             }
+
+            long PartB(const std::string& input)
+            {
+                return Implementation::Year2015::Day01::PartB(input);
+            }
         }
     }
 }
