@@ -1,0 +1,16 @@
+#pragma once
+#include <string>
+
+namespace AdventOfCodeLibrary
+{
+    namespace Implementation
+    {
+        namespace Year2015
+        {
+            namespace Day01
+            {
+                long PuzzleA(const std::string& input);
+            }
+        }
+    }
+}

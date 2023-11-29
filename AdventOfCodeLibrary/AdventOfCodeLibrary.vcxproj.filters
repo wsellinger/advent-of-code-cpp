@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="AdventOfCode.cpp" />
+    <ClInclude Include="AdventOfCodeLibrary.h" />
+    <ClInclude Include="Year2015\Day01.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Input.h" />
+    <ClCompile Include="AdventOfCodeLibrary.cpp" />
+    <ClCompile Include="Year2015\Day01.cpp" />
   </ItemGroup>
 </Project>
