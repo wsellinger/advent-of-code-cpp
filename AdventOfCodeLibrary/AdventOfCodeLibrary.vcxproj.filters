@@ -3,9 +3,11 @@
   <ItemGroup>
     <ClInclude Include="AdventOfCodeLibrary.h" />
     <ClInclude Include="Year2015\Day01.h" />
+    <ClInclude Include="Year2015\Day02.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
     <ClCompile Include="Year2015\Day01.cpp" />
+    <ClCompile Include="Year2015\Day02.cpp" />
   </ItemGroup>
 </Project>

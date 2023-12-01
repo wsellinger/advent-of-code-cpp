@@ -5,6 +5,7 @@
       <Filter>Year_2015</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Year_2015\Day_02.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Year_2015">
@@ -16,5 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="IO_Fixture.h" />
   </ItemGroup>
 </Project>

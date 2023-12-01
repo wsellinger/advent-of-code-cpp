@@ -104,6 +104,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Year_2015\Day_02.cpp" />
     <ClCompile Include="Year_2015\Day_01.cpp" />
     <ClCompile Include="pch.cpp" />
   </ItemGroup>
@@ -116,6 +117,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IO_Fixture.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

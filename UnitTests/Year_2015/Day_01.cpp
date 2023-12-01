@@ -1,3 +1,4 @@
+#include "..\IO_Fixture.h"
 #include "..\pch.h"
 #include <AdventOfCodeLibrary.h>
 
@@ -10,16 +11,16 @@ namespace Year_2015
         using std::string;
 
         #pragma region PartA
-        class PartA_Fixture : public TestWithParam<tuple<string, int>> {};
+        class IO_Fixture_1501A : public IO_Fixture {};
 
-        TEST_P(PartA_Fixture, PartA_Given_ValidInput_Returns_ExpectedResult)
+        TEST_P(IO_Fixture_1501A, PartA_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
             long actual = AdventOfCodeLibrary::Year2015::Day01::PartA(input);
             EXPECT_EQ(actual, expected);
         }
 
-        INSTANTIATE_TEST_CASE_P(PartA_Suite, PartA_Fixture,
+        INSTANTIATE_TEST_CASE_P(PartA_Suite, IO_Fixture_1501A,
             testing::Values(
                 std::make_tuple("(())", 0),
                 std::make_tuple("()()", 0),
@@ -34,16 +35,16 @@ namespace Year_2015
         #pragma endregion
 
         #pragma region PartB
-        class PartB_Fixture : public TestWithParam<tuple<string, int>> {};
+        class IO_Fixture_1501B : public IO_Fixture {};
 
-        TEST_P(PartB_Fixture, PartB_Given_ValidInput_Returns_ExpectedResult)
+        TEST_P(IO_Fixture_1501B, PartB_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
             long actual = AdventOfCodeLibrary::Year2015::Day01::PartB(input);
             EXPECT_EQ(actual, expected);
         }
 
-        INSTANTIATE_TEST_CASE_P(PartB_Suite, PartB_Fixture,
+        INSTANTIATE_TEST_CASE_P(PartB_Suite, IO_Fixture_1501B,
             testing::Values(
                 std::make_tuple(")", 1),
                 std::make_tuple("()())", 5),

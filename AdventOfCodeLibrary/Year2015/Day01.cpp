@@ -40,8 +40,6 @@ namespace AdventOfCodeLibrary
     {
         namespace Year2015
         {
-            long UpdateFloor(char input, long result);
-
             long Day01::PartA(const std::string& input)
             {
                 long floor = 0;
@@ -71,7 +69,7 @@ namespace AdventOfCodeLibrary
                 return -1;
             }
 
-            long UpdateFloor(char input, long result)
+            long Day01::UpdateFloor(char input, long result)
             {
                 if (input == '(')
                     result++;

@@ -8,7 +8,29 @@
 
 int main()
 {
-    long result = AdventOfCodeLibrary::Year2015::Day01::PartA(Input::Year2015::PuzzleA);
-    std::string output = std::to_string(result);
+    using std::string;
+
+    ////Year 2015 Day 01 Part A
+    //const string& input = Input::Year2015::Day01;
+    //long result = AdventOfCodeLibrary::Year2015::Day01::PartA(input);
+    //string output = std::to_string(result);
+    //std::cout << output + "\n";
+
+    ////Year 2015 Day 01 Part B
+    //const string& input = Input::Year2015::Day01;
+    //long result = AdventOfCodeLibrary::Year2015::Day01::PartB(input);
+    //string output = std::to_string(result);
+    //std::cout << output + "\n";
+
+    //Year 2015 Day 02 Part A
+    const string& input = Input::Year2015::Day02;
+    long result = AdventOfCodeLibrary::Year2015::Day01::PartA(input);
+    string output = std::to_string(result);
     std::cout << output + "\n";
+
+    ////Year 2015 Day 02 Part B
+    //const string& input = Input::Year2015::Day02;
+    //long result = AdventOfCodeLibrary::Year2015::Day01::PartB(input);
+    //string output = std::to_string(result);
+    //std::cout << output + "\n";
 }
