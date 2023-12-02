@@ -1,4 +1,12 @@
+#include "../Utilities/StringUtilities.h"
 #include "Day02.h"
+#include <vector>
+#include <numeric>
+#include <algorithm>
+
+using std::vector;
+using std::string;
+using std::exception;
 
 /// <summary>
 /// -- - Day 2: I Was Told There Would Be No Math-- -
@@ -49,17 +57,99 @@ namespace AdventOfCodeLibrary
         {
             long Day02::PartA(const std::string& input)
             {
-                throw std::exception("Function not yet implemented");
+                vector<Box> boxVector = GetBoxVector(input);
 
-                return 0;
+                return std::accumulate(boxVector.begin(), boxVector.end(), 0,
+                    [](int sum, const Box& box)
+                    {
+                        return sum + (box.GetSurfaceArea() + box.GetSmallestSideArea());
+                    });
             }
 
             long Day02::PartB(const std::string& input)
             {
-                throw std::exception("Function not yet implemented");
+                vector<Box> boxVector = GetBoxVector(input);
 
-                return 0;
+                return std::accumulate(boxVector.begin(), boxVector.end(), 0,
+                    [](int sum, const Box& box)
+                    {
+                        return sum + (box.GetShortestPerimeter() + box.GetVolume());
+                    });
             }
+
+            const string Day02::NEWLINE = "\r\n";
+
+            vector<Day02::Box> Day02::GetBoxVector(string input)
+            {
+                vector<Box> result;
+                                
+                string sanitizedInput = SanitizeInput(input);
+                vector<string> inputVector = StringUtilities::Split(sanitizedInput, NEWLINE);
+
+                for (const string token : inputVector)
+                {
+                    Box box = Box::GetBoxFromInput(token);
+                    result.push_back(box);
+                }
+
+                return result;
+            }
+
+            string Day02::SanitizeInput(string input)
+            {
+                size_t lastTwoIndex = input.size() - 2;
+                string lastTwoChars = input.substr(lastTwoIndex);
+
+                if (lastTwoChars == NEWLINE)
+                {
+                    return input.substr(0, lastTwoIndex);
+                }
+                else
+                {
+                    return input;
+                }
+            }
+
+            Day02::Box Day02::Box::GetBoxFromInput(string input)
+            {                
+                const char DELIMITER = 'x';
+
+                vector<string> inputVector = StringUtilities::Split(input, DELIMITER);
+
+                if (inputVector.size() == 3)
+                {
+                    return
+                    {
+                        std::stol(inputVector[0]), //Length 
+                        std::stol(inputVector[1]), //Width
+                        std::stol(inputVector[2]) //Height
+                    };
+                }
+                else
+                    throw exception("Not Implemented");
+            }
+
+            long Day02::Box::GetSurfaceArea() const
+            {
+                return
+                    (2 * GetAreaLengthWidth()) +
+                    (2 * GetAreaWidthHeight()) +
+                    (2 * GetAreaHeightLength());
+            }
+
+            long Day02::Box::GetSmallestSideArea() const
+            {
+                return std::min({ GetAreaLengthWidth(), GetAreaWidthHeight(), GetAreaHeightLength()});
+            }
+
+            long Day02::Box::GetShortestPerimeter() const
+            {
+                vector<int> sides = { Length, Width, Height };
+                std::sort(sides.begin(), sides.end());
+                
+                return (sides[0] + sides[1]) * 2;
+            }
+
         }
     }
 }

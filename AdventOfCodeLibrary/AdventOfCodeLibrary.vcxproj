@@ -144,11 +144,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AdventOfCodeLibrary.h" />
+    <ClInclude Include="Utilities\StringUtilities.h" />
     <ClInclude Include="Year2015\Day02.h" />
     <ClInclude Include="Year2015\Day01.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
+    <ClCompile Include="Utilities\StringUtilities.cpp" />
     <ClCompile Include="Year2015\Day02.cpp" />
     <ClCompile Include="Year2015\Day01.cpp" />
   </ItemGroup>

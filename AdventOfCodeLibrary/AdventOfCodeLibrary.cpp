@@ -5,18 +5,20 @@
 #include "Year2015/Day01.h"
 #include "Year2015/Day02.h"
 
+using std::string;
+
 namespace AdventOfCodeLibrary
 {
     namespace Year2015
     {
         namespace Day01
         {
-            long PartA(const std::string& input)
+            long PartA(const string& input)
             {
                 return Implementation::Year2015::Day01::PartA(input);
             }
 
-            long PartB(const std::string& input)
+            long PartB(const string& input)
             {
                 return Implementation::Year2015::Day01::PartB(input);
             }
@@ -24,12 +26,12 @@ namespace AdventOfCodeLibrary
 
         namespace Day02
         {
-            long PartA(const std::string& input)
+            long PartA(const string& input)
             {
                 return Implementation::Year2015::Day02::PartA(input);
             }
 
-            long PartB(const std::string& input)
+            long PartB(const string& input)
             {
                 return Implementation::Year2015::Day02::PartB(input);
             }
