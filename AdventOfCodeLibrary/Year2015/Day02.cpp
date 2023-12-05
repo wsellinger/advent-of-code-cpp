@@ -1,4 +1,4 @@
-#include "../Utilities/StringUtilities.h"
+#include "../Utils/StringUtils.h"
 #include "Day02.h"
 #include <vector>
 #include <numeric>
@@ -55,7 +55,7 @@ namespace AdventOfCodeLibrary
     {
         namespace Year2015
         {
-            long Day02::PartA(const std::string& input)
+            long Day02::PartA(const string& input)
             {
                 vector<Box> boxVector = GetBoxVector(input);
 
@@ -66,7 +66,7 @@ namespace AdventOfCodeLibrary
                     });
             }
 
-            long Day02::PartB(const std::string& input)
+            long Day02::PartB(const string& input)
             {
                 vector<Box> boxVector = GetBoxVector(input);
 
@@ -77,14 +77,10 @@ namespace AdventOfCodeLibrary
                     });
             }
 
-            const string Day02::NEWLINE = "\r\n";
-
-            vector<Day02::Box> Day02::GetBoxVector(string input)
+            vector<Day02::Box> Day02::GetBoxVector(const string& input)
             {
                 vector<Box> result;
-                                
-                string sanitizedInput = SanitizeInput(input);
-                vector<string> inputVector = StringUtilities::Split(sanitizedInput, NEWLINE);
+                vector<string> inputVector = StringUtils::SplitOnNewLine(input, true);
 
                 for (const string token : inputVector)
                 {
@@ -95,26 +91,11 @@ namespace AdventOfCodeLibrary
                 return result;
             }
 
-            string Day02::SanitizeInput(string input)
-            {
-                size_t lastTwoIndex = input.size() - 2;
-                string lastTwoChars = input.substr(lastTwoIndex);
-
-                if (lastTwoChars == NEWLINE)
-                {
-                    return input.substr(0, lastTwoIndex);
-                }
-                else
-                {
-                    return input;
-                }
-            }
-
-            Day02::Box Day02::Box::GetBoxFromInput(string input)
+            Day02::Box Day02::Box::GetBoxFromInput(const string& input)
             {                
                 const char DELIMITER = 'x';
 
-                vector<string> inputVector = StringUtilities::Split(input, DELIMITER);
+                vector<string> inputVector = StringUtils::Split(input, DELIMITER);
 
                 if (inputVector.size() == 3)
                 {
@@ -139,7 +120,7 @@ namespace AdventOfCodeLibrary
 
             long Day02::Box::GetSmallestSideArea() const
             {
-                return std::min({ GetAreaLengthWidth(), GetAreaWidthHeight(), GetAreaHeightLength()});
+                return std::min({ GetAreaLengthWidth(), GetAreaWidthHeight(), GetAreaHeightLength() });
             }
 
             long Day02::Box::GetShortestPerimeter() const

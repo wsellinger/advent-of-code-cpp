@@ -4,12 +4,12 @@
     <ClInclude Include="AdventOfCodeLibrary.h" />
     <ClInclude Include="Year2015\Day01.h" />
     <ClInclude Include="Year2015\Day02.h" />
-    <ClInclude Include="Utilities\StringUtilities.h" />
+    <ClInclude Include="Utils\StringUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
     <ClCompile Include="Year2015\Day01.cpp" />
     <ClCompile Include="Year2015\Day02.cpp" />
-    <ClCompile Include="Utilities\StringUtilities.cpp" />
+    <ClCompile Include="Utils\StringUtils.cpp" />
   </ItemGroup>
 </Project>

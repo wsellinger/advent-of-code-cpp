@@ -15,15 +15,13 @@ namespace AdventOfCodeLibrary
                 static long PartB(const std::string& input);
 
             private:
-                static const std::string NEWLINE;
-
                 struct Box
                 {
                     const long Length = 0;
                     const long Width = 0;
                     const long Height = 0;
 
-                    static Box GetBoxFromInput(std::string input);
+                    static Box GetBoxFromInput(const std::string& input);
 
                     long GetAreaLengthWidth() const { return Length * Width; }
                     long GetAreaWidthHeight() const { return Width * Height; }
@@ -36,8 +34,7 @@ namespace AdventOfCodeLibrary
                     long GetShortestPerimeter() const;
                 };
 
-                static std::vector<Box> GetBoxVector(std::string input);
-                static std::string SanitizeInput(std::string input);
+                static std::vector<Box> GetBoxVector(const std::string& input);
             };
         }
     }
