@@ -1,5 +1,7 @@
 #include "Day01.h"
 
+using std::string;
+
 /// <summary>
 /// --- Day 1: Not Quite Lisp ---
 /// 
@@ -33,14 +35,13 @@
 /// What is the position of the character that causes Santa to first enter the basement?
 /// 
 /// </summary>
-/// 
 namespace AdventOfCodeLibrary
 {
     namespace Implementation
     {
         namespace Year2015
         {
-            long Day01::PartA(const std::string& input)
+            long Day01::PartA(const string& input)
             {
                 long floor = 0;
 
@@ -53,7 +54,7 @@ namespace AdventOfCodeLibrary
                 return floor;
             }
 
-            long Day01::PartB(const std::string& input)
+            long Day01::PartB(const string& input)
             {
                 long floor = 0;
 

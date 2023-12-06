@@ -48,7 +48,6 @@ using std::exception;
 /// 
 /// 
 /// </summary>
-/// 
 namespace AdventOfCodeLibrary
 {
     namespace Implementation

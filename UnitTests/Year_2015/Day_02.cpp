@@ -6,6 +6,8 @@ namespace Year_2015
 {
     namespace Day_02
     {
+        namespace Day02 = AdventOfCodeLibrary::Year2015::Day02;
+
         using testing::TestWithParam;
         using std::tuple;
         using std::string;
@@ -16,7 +18,7 @@ namespace Year_2015
         TEST_P(IO_Fixture_1502A, PartA_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
-            long actual = AdventOfCodeLibrary::Year2015::Day02::PartA(input);
+            long actual = Day02::PartA(input);
             EXPECT_EQ(actual, expected);
         }
 
@@ -34,7 +36,7 @@ namespace Year_2015
         TEST_P(IO_Fixture_1502B, PartB_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
-            long actual = AdventOfCodeLibrary::Year2015::Day02::PartB(input);
+            long actual = Day02::PartB(input);
             EXPECT_EQ(actual, expected);
         }
 

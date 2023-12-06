@@ -6,6 +6,7 @@
     </ClCompile>
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Year_2015\Day_02.cpp" />
+    <ClCompile Include="Year_2023\Day_01.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Year_2015">

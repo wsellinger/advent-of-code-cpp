@@ -5,11 +5,13 @@
     <ClInclude Include="Year2015\Day01.h" />
     <ClInclude Include="Year2015\Day02.h" />
     <ClInclude Include="Utils\StringUtils.h" />
+    <ClInclude Include="Year2023\Day01.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
     <ClCompile Include="Year2015\Day01.cpp" />
     <ClCompile Include="Year2015\Day02.cpp" />
     <ClCompile Include="Utils\StringUtils.cpp" />
+    <ClCompile Include="Year2023\Day01.cpp" />
   </ItemGroup>
 </Project>
