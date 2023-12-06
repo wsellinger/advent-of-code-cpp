@@ -6,6 +6,7 @@
 
 using std::vector;
 using std::string;
+using std::exception;
 
 /// <summary>
 /// --- Day 1: Trebuchet?! ---
@@ -68,24 +69,93 @@ namespace AdventOfCodeLibrary
         {
             long Day01::PartA(const string& input)
             {
-                vector<string> vInput = StringUtils::SplitOnNewLine(input, true);                
-                vector<int> vCalibration;
-                transform(vInput.begin(), vInput.end(), back_inserter(vCalibration), PartASub::GetCalibrationValue);
-                
-                return accumulate(vCalibration.begin(), vCalibration.end(), 0);
-            }
-
-            int Day01::PartASub::GetCalibrationValue(string input)
-            {
-                char firstDigit = *find_if(begin(input), end(input), [](int x) { return isdigit(x); });
-                char lastDigit = *find_if(rbegin(input), rend(input), [](int x) { return isdigit(x); });
-
-                return ConvertDigitsToInt(firstDigit, lastDigit);
+                return GetCalibrationSum(input, PartASub::GetCalibrationValue);
             }
 
             long Day01::PartB(const string& input)
             {
-                throw new std::exception("Not Implemented");
+                return GetCalibrationSum(input, PartBSub::GetCalibrationValue);
+            }
+
+            long Day01::GetCalibrationSum(const string& input, CalibrationMethod method)
+            {
+                vector<string> vInput = StringUtils::SplitOnNewLine(input, true);
+                vector<int> vCalibration;
+                transform(vInput.begin(), vInput.end(), back_inserter(vCalibration), method);
+
+                return accumulate(vCalibration.begin(), vCalibration.end(), 0);
+            }
+
+            int Day01::PartASub::GetCalibrationValue(const string& input)
+            {
+                char firstDigit = *find_if(input.begin(), input.end(), [](int x) { return isdigit(x); });
+                char lastDigit = *find_if(input.rbegin(), input.rend(), [](int x) { return isdigit(x); });
+
+                return ConvertDigitsToInt(firstDigit, lastDigit);
+            }
+
+            int Day01::PartBSub::GetCalibrationValue(const string& input)
+            {
+                char firstDigit = GetFirstDigit(input);
+                char lastDigit = GetLastDigit(input);
+
+                return ConvertDigitsToInt(firstDigit, lastDigit);
+            }
+
+            char Day01::PartBSub::GetFirstDigit(const string& input)
+            {
+                for (size_t i = 0; i < input.length(); i++)
+                {
+                    char digit = '\0';
+                    if (GetDigitAtIndex(input, i, digit))
+                    {
+                        return digit;
+                    }
+                }
+
+                throw new exception("No Digit Found In Line");
+            }
+
+            char Day01::PartBSub::GetLastDigit(const string& input)
+            {
+                for (size_t ri = input.length(); ri > 0; ri--)
+                {
+                    size_t i = ri - 1;
+                    char digit = '\0';
+                    if (GetDigitAtIndex(input, i, digit))
+                    {
+                        return digit;
+                    }
+                }
+
+                throw new exception("No Digit Found In Line");
+            }
+
+            bool Day01::PartBSub::GetDigitAtIndex(const string& input, size_t index, char& output)
+            {
+                if (isdigit(input[index]))
+                {
+                    output = input[index];
+                    return true;
+                }
+                else
+                {
+                    for (size_t i = 0; i < DIGIT_WORDS.size(); i++)
+                    {
+                        string word = DIGIT_WORDS[i];
+                        if (index + word.length() <= input.length())
+                        {
+                            if (word == input.substr(index, word.length()))
+                            {
+                                output = (char)(i + 1 + '0');
+                                return true;
+                            }
+                        }
+                    }
+                }
+
+                output = '\0';
+                return false;
             }
 
             int Day01::ConvertDigitsToInt(char firstDigit, char lastDigit)
@@ -94,6 +164,7 @@ namespace AdventOfCodeLibrary
                 return atoi(digits);
             }
 
+            const vector<string> Day01::DIGIT_WORDS = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
         }
     }
 }
