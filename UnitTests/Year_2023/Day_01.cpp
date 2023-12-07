@@ -1,6 +1,7 @@
 #include "..\IO_Fixture.h"
 #include "..\pch.h"
 #include <AdventOfCodeLibrary.h>
+#include <sstream>
 
 namespace Year_2023
 {
@@ -11,6 +12,7 @@ namespace Year_2023
         using testing::TestWithParam;
         using std::tuple;
         using std::string;
+        using std::stringstream;
 
 
         #pragma region PartA
@@ -19,7 +21,8 @@ namespace Year_2023
         TEST_P(IO_Fixture_2301A, PartA_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
-            long actual = Day01::PartA(input);
+            stringstream stream(input);
+            long actual = Day01::PartA(stream);
             EXPECT_EQ(actual, expected);
         }
 
@@ -41,7 +44,8 @@ namespace Year_2023
         TEST_P(IO_Fixture_2301B, PartB_Given_ValidInput_Returns_ExpectedResult)
         {
             auto& [input, expected] = GetParam();
-            long actual = Day01::PartB(input);
+            stringstream stream(input);
+            long actual = Day01::PartB(stream);
             EXPECT_EQ(actual, expected);
         }
 

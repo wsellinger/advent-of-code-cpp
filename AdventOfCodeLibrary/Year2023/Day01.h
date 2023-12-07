@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <iostream>
 
 namespace AdventOfCodeLibrary
 {
@@ -11,8 +12,8 @@ namespace AdventOfCodeLibrary
             class Day01
             {
             public:
-                static long PartA(const std::string& input);
-                static long PartB(const std::string& input);
+                static long PartA(std::istream& input);
+                static long PartB(std::istream& input);
             private:
                 using CalibrationMethod = int (*)(const std::string&);
 
@@ -32,7 +33,7 @@ namespace AdventOfCodeLibrary
                     static bool GetDigitAtIndex(const std::string& input, size_t index, char& output);
                 };
 
-                static long GetCalibrationSum(const std::string& input, CalibrationMethod method);
+                static long GetCalibrationSum(std::istream& input, CalibrationMethod method);
                 static int ConvertDigitsToInt(char firstDigit, char lastDigit);
 
                 static const std::vector<std::string> DIGIT_WORDS;

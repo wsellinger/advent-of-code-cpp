@@ -7,6 +7,7 @@
 #include "Year2023/Day01.h"
 
 using std::string;
+using std::istream;
 
 namespace AdventOfCodeLibrary
 {
@@ -27,12 +28,12 @@ namespace AdventOfCodeLibrary
 
         namespace Day02
         {
-            long PartA(const string& input)
+            long PartA(istream& input)
             {
                 return Implementation::Year2015::Day02::PartA(input);
             }
 
-            long PartB(const string& input)
+            long PartB(istream& input)
             {
                 return Implementation::Year2015::Day02::PartB(input);
             }
@@ -43,12 +44,12 @@ namespace AdventOfCodeLibrary
     {
         namespace Day01
         {
-            long PartA(const string& input)
+            long PartA(istream& input)
             {
                 return Implementation::Year2023::Day01::PartA(input);
             }
 
-            long PartB(const string& input)
+            long PartB(istream& input)
             {
                 return Implementation::Year2023::Day01::PartB(input);
             }

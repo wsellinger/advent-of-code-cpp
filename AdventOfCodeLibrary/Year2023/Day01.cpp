@@ -1,11 +1,13 @@
-#include "Day01.h"
 #include "../Utils/StringUtils.h"
+#include "Day01.h"
 #include <algorithm>
+#include <iostream>
 #include <iterator>
 #include <numeric>
 
 using std::vector;
 using std::string;
+using std::istream;
 using std::exception;
 
 /// <summary>
@@ -67,23 +69,28 @@ namespace AdventOfCodeLibrary
     {
         namespace Year2023
         {
-            long Day01::PartA(const string& input)
+            long Day01::PartA(istream& input)
             {
                 return GetCalibrationSum(input, PartASub::GetCalibrationValue);
             }
 
-            long Day01::PartB(const string& input)
+            long Day01::PartB(istream& input)
             {
                 return GetCalibrationSum(input, PartBSub::GetCalibrationValue);
             }
 
-            long Day01::GetCalibrationSum(const string& input, CalibrationMethod method)
+            long Day01::GetCalibrationSum(istream& input, CalibrationMethod GetCalibrationValue)
             {
-                vector<string> vInput = StringUtils::SplitOnNewLine(input, true);
-                vector<int> vCalibration;
-                transform(vInput.begin(), vInput.end(), back_inserter(vCalibration), method);
+                vector<int> calibrations;
+                string line;
 
-                return accumulate(vCalibration.begin(), vCalibration.end(), 0);
+                while (std::getline(input, line))
+                {
+                    int value = GetCalibrationValue(line);
+                    calibrations.push_back(value);
+                }
+
+                return accumulate(calibrations.begin(), calibrations.end(), 0);
             }
 
             int Day01::PartASub::GetCalibrationValue(const string& input)

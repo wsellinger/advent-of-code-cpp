@@ -1,12 +1,13 @@
 #include "../Utils/StringUtils.h"
 #include "Day02.h"
-#include <vector>
-#include <numeric>
 #include <algorithm>
+#include <iostream>
+#include <numeric>
 
 using std::vector;
 using std::string;
 using std::exception;
+using std::istream;
 
 /// <summary>
 /// -- - Day 2: I Was Told There Would Be No Math-- -
@@ -54,7 +55,7 @@ namespace AdventOfCodeLibrary
     {
         namespace Year2015
         {
-            long Day02::PartA(const string& input)
+            long Day02::PartA(istream& input)
             {
                 vector<Box> boxVector = GetBoxVector(input);
 
@@ -65,7 +66,7 @@ namespace AdventOfCodeLibrary
                     });
             }
 
-            long Day02::PartB(const string& input)
+            long Day02::PartB(istream& input)
             {
                 vector<Box> boxVector = GetBoxVector(input);
 
@@ -76,14 +77,14 @@ namespace AdventOfCodeLibrary
                     });
             }
 
-            vector<Day02::Box> Day02::GetBoxVector(const string& input)
+            vector<Day02::Box> Day02::GetBoxVector(istream& input)
             {
                 vector<Box> result;
-                vector<string> inputVector = StringUtils::SplitOnNewLine(input, true);
+                string line;
 
-                for (const string token : inputVector)
+                while (std::getline(input, line))
                 {
-                    Box box = Box::GetBoxFromInput(token);
+                    Box box = Box::GetBoxFromInput(line);
                     result.push_back(box);
                 }
 

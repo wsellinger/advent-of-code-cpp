@@ -11,8 +11,8 @@ namespace AdventOfCodeLibrary
             class Day02
             {
             public:
-                static long PartA(const std::string& input);
-                static long PartB(const std::string& input);
+                static long PartA(std::istream& input);
+                static long PartB(std::istream& input);
 
             private:
                 struct Box
@@ -34,7 +34,7 @@ namespace AdventOfCodeLibrary
                     long GetShortestPerimeter() const;
                 };
 
-                static std::vector<Box> GetBoxVector(const std::string& input);
+                static std::vector<Box> GetBoxVector(std::istream& input);
             };
         }
     }
