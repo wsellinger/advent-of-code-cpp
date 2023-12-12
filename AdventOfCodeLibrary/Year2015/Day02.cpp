@@ -1,3 +1,4 @@
+#include "../Exceptions/InvalidInputException.h"
 #include "../Utils/StringUtils.h"
 #include "Day02.h"
 #include <algorithm>
@@ -6,7 +7,8 @@
 
 using std::vector;
 using std::string;
-using std::exception;
+using std::string_view;
+using std::logic_error;
 using std::istream;
 
 /// <summary>
@@ -95,19 +97,18 @@ namespace AdventOfCodeLibrary
             {                
                 const char DELIMITER = 'x';
 
-                vector<string> inputVector = StringUtils::Split(input, DELIMITER);
+                vector<string_view> inputVector = StringUtils::Split(input, DELIMITER);
 
                 if (inputVector.size() == 3)
                 {
-                    return
-                    {
-                        std::stol(inputVector[0]), //Length 
-                        std::stol(inputVector[1]), //Width
-                        std::stol(inputVector[2]) //Height
-                    };
+                    int length = std::stol(inputVector[0].data());
+                    int width = std::stol(inputVector[1].data());
+                    int height = std::stol(inputVector[2].data());
+
+                    return { length, width, height };
                 }
                 else
-                    throw exception("Not Implemented");
+                    throw InvalidInputException();
             }
 
             long Day02::Box::GetSurfaceArea() const

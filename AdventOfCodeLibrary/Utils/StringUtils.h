@@ -7,13 +7,15 @@ namespace AdventOfCodeLibrary
 {
     namespace StringUtils
     {
-        std::vector<std::string> Split(const std::string& input, const char delimiter);
-        std::vector<std::string> Split(const std::string& input, const char delimiter, bool trimTrailing);
+        std::vector<std::string_view> Split(const std::string_view& input, const char delimiter);
+        std::vector<std::string_view> Split(const std::string_view& input, const std::string_view& delimiter);
 
-        std::vector<std::string> Split(const std::string& input, const std::string& delimiter);
-        std::vector<std::string> Split(const std::string& input, const std::string& delimiter, bool trimTrailing);
+        std::string_view Trim(const std::string_view& input);
 
-        std::vector<std::string> SplitOnNewLine(const std::string& input);
-        std::vector<std::string> SplitOnNewLine(const std::string& input, bool trimTrailing);
+        std::string ToUpper(const std::string_view& input);
+        std::string ToLower(const std::string_view& input);
+
+        std::string& ToUpperInPlace(std::string& input);
+        std::string& ToLowerInPlace(std::string& input);
     }
 }

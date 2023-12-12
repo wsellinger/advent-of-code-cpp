@@ -15,17 +15,17 @@ namespace AdventOfCode
         {
             ifstream file(name);
             if (!file.is_open())
-                throw new FileOpenFailedException();
+                throw FileOpenFailedException();
 
             if (!std::getline(file, output))
-                throw new FileEmptyException();
+                throw FileEmptyException();
         }
 
         void GetFileStream(const std::string& name, std::ifstream& output)
         {
             output.open(name);
             if (!output.is_open())
-                throw new FileOpenFailedException();
+                throw FileOpenFailedException();
         }
     }
 }

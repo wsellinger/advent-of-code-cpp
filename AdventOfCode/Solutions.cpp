@@ -70,6 +70,24 @@ namespace AdventOfCode
                     AocUtils::LogOutput(result);
                 }
             }
+
+            namespace Day02
+            {
+                void PartA()
+                {
+                    ifstream input;
+                    AocUtils::GetFileStreamInput(2023, 2, input);
+                    long result = AdventOfCodeLibrary::Year2023::Day02::PartA(input);
+                    AocUtils::LogOutput(result);
+                }
+                void PartB()
+                {
+                    ifstream input;
+                    AocUtils::GetFileStreamInput(2023, 2, input);
+                    long result = AdventOfCodeLibrary::Year2023::Day02::PartB(input);
+                    AocUtils::LogOutput(result);
+                }
+            }
         }
     }
 }

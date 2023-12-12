@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iterator>
 #include <numeric>
+#include "../Exceptions/InvalidInputException.h"
 
 using std::vector;
 using std::string;
@@ -120,7 +121,7 @@ namespace AdventOfCodeLibrary
                     }
                 }
 
-                throw new exception("No Digit Found In Line");
+                throw InvalidInputException();
             }
 
             char Day01::PartBSub::GetLastDigit(const string& input)
@@ -135,7 +136,7 @@ namespace AdventOfCodeLibrary
                     }
                 }
 
-                throw new exception("No Digit Found In Line");
+                throw InvalidInputException();
             }
 
             bool Day01::PartBSub::GetDigitAtIndex(const string& input, size_t index, char& output)

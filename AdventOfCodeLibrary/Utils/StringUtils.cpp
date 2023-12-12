@@ -1,8 +1,11 @@
 #include "StringUtils.h"
 #include <sstream>
 #include "StringUtils.h"
+#include <algorithm>
+#include <functional>
 
 using std::string;
+using std::string_view;
 using std::vector;
 using std::stringstream;
 
@@ -10,66 +13,90 @@ namespace AdventOfCodeLibrary
 {
     namespace StringUtils
     {
-        vector<string> Split(const string& input, const char delimiter)
+        vector<string_view> Split(const string_view& input, const char delimiter)
         {
-            return Split(input, delimiter, false);
-        }
+            string_view operableInput = input;
+            vector<string_view> result;
 
-        vector<string> Split(const string& input, const char delimiter, bool trimTrailing)
-        {
-            vector<string> result;
-            stringstream stream(input);
-            string token;
-
-            while (std::getline(stream, token, delimiter))
+            while (!operableInput.empty())
             {
-                bool isFinalToken = stream.tellg() == stream.tellp();
-                if (!trimTrailing || !isFinalToken || !token.empty())
-                {
-                    result.push_back(token);
-                }
+                size_t iDelimiter = operableInput.find(delimiter);
+                string_view substring = operableInput.substr(0, iDelimiter);
+                result.push_back(substring);
+                
+                if (iDelimiter == string_view::npos)
+                    break;
+
+                operableInput.remove_prefix(iDelimiter + 1);
             }
 
             return result;
         }
 
-        vector<string> Split(const string& input, const string& delimiter)
+        vector<string_view> Split(const string_view& input, const string_view& delimiter)
         {
-            return Split(input, delimiter, false);
-        }
+            string_view operableInput = input;
+            vector<string_view> result;
 
-        vector<string> Split(const string& input, const string& delimiter, bool trimTrailing)
-        {
-            vector<string> result;
-            size_t start = 0, end = 0;
-
-            while ((end = input.find(delimiter, start)) != string::npos)
+            while (!operableInput.empty())
             {
-                size_t count = end - start;
-                string token = input.substr(start, count);
-                result.push_back(token);
-                start = end + delimiter.length();
-            }
+                size_t iDelimiter = operableInput.find(delimiter);
+                string_view substring = operableInput.substr(0, iDelimiter);
+                result.push_back(substring);
 
-            string finalToken = input.substr(start);
-            if (!trimTrailing || !finalToken.empty())
-            {
-                result.push_back(finalToken);
+                if (iDelimiter == string_view::npos)
+                    break;
+
+                operableInput.remove_prefix(iDelimiter + delimiter.length());
             }
 
             return result;
         }
 
-        vector<string> SplitOnNewLine(const string& input)
+        string_view Trim(const string_view& input)
         {
-            return SplitOnNewLine(input, false);
+            auto isNotSpaceLambda = [](unsigned char ch) { return std::isspace(ch); };
+            auto firstIterator = std::find_if_not(input.begin(), input.end(), isNotSpaceLambda);
+            auto lastIterator = std::find_if_not(input.rbegin(), input.rend(), isNotSpaceLambda);
+            size_t iStart = std::distance(input.begin(), firstIterator);
+            size_t length = std::distance(input.begin(), lastIterator.base()) - iStart;
+
+            return input.substr(iStart, length);
         }
 
-        vector<string> SplitOnNewLine(const string& input, bool trimTrailing)
+        string ToUpper(const string_view& input)
         {
-            std::ostringstream oss;
-            oss << std::endl;
-            return Split(input, oss.str(), trimTrailing);
+            string result;
+            result.reserve(input.length());
+
+            for (unsigned char c : input)
+                result += std::toupper(c);
+
+            return result;
         }
+
+        string ToLower(const string_view& input)
+        {
+            string result;
+            result.reserve(input.length());
+
+            for (unsigned char c : input)
+                result += std::tolower(c);
+
+            return result;
+        }
+
+        string& ToUpperInPlace(string& input)
+        {
+            std::transform(input.begin(), input.end(), input.begin(), [](unsigned char c) { return  std::toupper(c); });
+            return input;
+        }
+
+        string& ToLowerInPlace(string& input)
+        {
+            std::transform(input.begin(), input.end(), input.begin(), [](unsigned char c) { return  std::tolower(c); });
+            return input;
+        }
+
     }
 }

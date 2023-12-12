@@ -112,6 +112,7 @@
     <ClCompile Include="Year_2015\Day_01.cpp" />
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Year_2023\Day_01.cpp" />
+    <ClCompile Include="Year_2023\Day_02.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

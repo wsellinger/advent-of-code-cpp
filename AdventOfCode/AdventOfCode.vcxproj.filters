@@ -2,8 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Utils\FileUtils.cpp" />
-    <ClCompile Include="Exceptions\FileOpenFailedException.cpp" />
-    <ClCompile Include="Exceptions\FileEmptyException.cpp" />
     <ClCompile Include="Utils\AocUtils.cpp" />
     <ClCompile Include="AdventOfCode.cpp" />
     <ClCompile Include="Solutions.cpp" />
@@ -12,6 +10,7 @@
     <Text Include="Input\Year_2015__Day_01.txt" />
     <Text Include="Input\Year_2015__Day_02.txt" />
     <Text Include="Input\Year_2023__Day_01.txt" />
+    <Text Include="Input\Year_2023__Day_02.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils\FileUtils.h" />

@@ -13,4 +13,7 @@ int main()
 
     AdventOfCode::Solutions::Year2023::Day01::PartA();
     AdventOfCode::Solutions::Year2023::Day01::PartB();
+
+    AdventOfCode::Solutions::Year2023::Day02::PartA();
+    AdventOfCode::Solutions::Year2023::Day02::PartB();
 }

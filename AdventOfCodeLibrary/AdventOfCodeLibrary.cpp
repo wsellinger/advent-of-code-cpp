@@ -5,6 +5,7 @@
 #include "Year2015/Day01.h"
 #include "Year2015/Day02.h"
 #include "Year2023/Day01.h"
+#include "Year2023/Day02.h"
 
 using std::string;
 using std::istream;
@@ -52,6 +53,19 @@ namespace AdventOfCodeLibrary
             long PartB(istream& input)
             {
                 return Implementation::Year2023::Day01::PartB(input);
+            }
+        }
+
+        namespace Day02
+        {
+            long PartA(istream& input)
+            {
+                return Implementation::Year2023::Day02::PartA(input);
+            }
+
+            long PartB(istream& input)
+            {
+                return Implementation::Year2023::Day02::PartB(input);
             }
         }
     }
