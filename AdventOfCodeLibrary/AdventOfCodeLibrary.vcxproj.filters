@@ -10,6 +10,8 @@
     <ClInclude Include="Utils\MapUtils.h" />
     <ClInclude Include="Exceptions\InvalidInputException.h" />
     <ClInclude Include="Exceptions\NotImplementedException.h" />
+    <ClInclude Include="Year2023\Day03.h" />
+    <ClInclude Include="Models\Range.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
@@ -18,5 +20,6 @@
     <ClCompile Include="Utils\StringUtils.cpp" />
     <ClCompile Include="Year2023\Day01.cpp" />
     <ClCompile Include="Year2023\Day02.cpp" />
+    <ClCompile Include="Year2023\Day03.cpp" />
   </ItemGroup>
 </Project>

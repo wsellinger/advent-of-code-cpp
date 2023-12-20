@@ -150,12 +150,14 @@
     <ClInclude Include="AdventOfCodeLibrary.h" />
     <ClInclude Include="Exceptions\InvalidInputException.h" />
     <ClInclude Include="Exceptions\NotImplementedException.h" />
+    <ClInclude Include="Models\Range.h" />
     <ClInclude Include="Utils\MapUtils.h" />
     <ClInclude Include="Year2023\Day02.h" />
     <ClInclude Include="Utils\StringUtils.h" />
     <ClInclude Include="Year2015\Day02.h" />
     <ClInclude Include="Year2015\Day01.h" />
     <ClInclude Include="Year2023\Day01.h" />
+    <ClInclude Include="Year2023\Day03.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdventOfCodeLibrary.cpp" />
@@ -164,6 +166,7 @@
     <ClCompile Include="Year2015\Day01.cpp" />
     <ClCompile Include="Year2023\Day01.cpp" />
     <ClCompile Include="Year2023\Day02.cpp" />
+    <ClCompile Include="Year2023\Day03.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

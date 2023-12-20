@@ -31,6 +31,12 @@ namespace AdventOfCodeLibrary
             long PartA(std::istream& input);
             long PartB(std::istream& input);
         }
+
+        namespace Day03
+        {
+            long PartA(std::istream& input);
+            long PartB(std::istream& input);
+        }
     }
 }
 

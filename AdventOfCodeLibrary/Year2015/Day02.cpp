@@ -79,6 +79,8 @@ namespace AdventOfCodeLibrary
                     });
             }
 
+            //Private
+
             vector<Day02::Box> Day02::GetBoxVector(istream& input)
             {
                 vector<Box> result;

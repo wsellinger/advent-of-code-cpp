@@ -31,6 +31,12 @@ namespace AdventOfCode
                 void PartA();
                 void PartB();
             }
+
+            namespace Day03
+            {
+                void PartA();
+                void PartB();
+            }
         }
     }
 }

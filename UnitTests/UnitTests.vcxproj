@@ -108,6 +108,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Year_2023\Day_03.cpp" />
     <ClCompile Include="Year_2015\Day_02.cpp" />
     <ClCompile Include="Year_2015\Day_01.cpp" />
     <ClCompile Include="pch.cpp" />

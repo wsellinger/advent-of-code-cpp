@@ -13,7 +13,7 @@ namespace AdventOfCodeLibrary
 {
     namespace StringUtils
     {
-        vector<string_view> Split(const string_view& input, const char delimiter)
+        vector<string_view> Split(string_view input, const char delimiter)
         {
             string_view operableInput = input;
             vector<string_view> result;
@@ -33,7 +33,7 @@ namespace AdventOfCodeLibrary
             return result;
         }
 
-        vector<string_view> Split(const string_view& input, const string_view& delimiter)
+        vector<string_view> Split(string_view input, string_view delimiter)
         {
             string_view operableInput = input;
             vector<string_view> result;
@@ -53,7 +53,7 @@ namespace AdventOfCodeLibrary
             return result;
         }
 
-        string_view Trim(const string_view& input)
+        string_view Trim(string_view input)
         {
             auto isNotSpaceLambda = [](unsigned char ch) { return std::isspace(ch); };
             auto firstIterator = std::find_if_not(input.begin(), input.end(), isNotSpaceLambda);
@@ -64,7 +64,7 @@ namespace AdventOfCodeLibrary
             return input.substr(iStart, length);
         }
 
-        string ToUpper(const string_view& input)
+        string ToUpper(string_view input)
         {
             string result;
             result.reserve(input.length());
@@ -75,7 +75,7 @@ namespace AdventOfCodeLibrary
             return result;
         }
 
-        string ToLower(const string_view& input)
+        string ToLower(string_view input)
         {
             string result;
             result.reserve(input.length());
